@@ -1,0 +1,59 @@
+.card__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem;
+}
+
+.card{
+    border-radius: 10px;
+}
+
+.card__item{
+    transition: all .3s ease-in-out;
+}
+
+.card__item:hover{
+    transform: scale(1.125);
+}
+
+.card__title{
+    color: $light-color;
+    font-size: 1.5rem;
+    line-height: 1.25em;
+    margin-bottom: 3rem;
+    margin-top: 12px;
+    @media screen and (min-width: 769px){
+        font-size: 1.75rem;
+    }
+}
+
+.card__image{
+    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    line-height: 0;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card--lg{
+    flex-basis: 22%;
+}
+
+.card--xl{
+    flex-basis: 28%;
+}
+
+.card .play__icon{
+    opacity: 0;
+    position: absolute;
+    transition: all .3s cubic-bezier(0.37, 0, 0.63, 1);
+    visibility: hidden;
+    z-index: 9;
+}
+
+.card:hover .play__icon{
+    opacity: 1;
+    visibility: visible;
+}

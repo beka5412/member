@@ -1,0 +1,69 @@
+/*.rate > label:before {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0;
+    font-family: "Nioicon" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    padding: .3rem .2rem;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\ebd0";
+}*/
+
+.rating__star{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rating__star input{
+    position: relative;
+    width: 15px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    left: -2rem;
+    align-items: center;
+    appearance: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.rating__star input::before {
+    cursor: pointer;
+    margin: 0;
+    font-family: "Nioicon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    padding: .1rem .12rem;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\ebd0";
+
+    position: absolute;
+    font-size: 19px;
+    position: absolute;
+    left: 3px;
+    color: #f4bd0e;
+    transition: all .3s;
+}
+
+.rating__star input:nth-child(2n + 1)::before {
+    right: 4px;
+    left: initial;
+}
+
+.rating__star input:hover ~ input::before,
+.rating__star input:hover::before,
+.rating__star input:checked ~ input::before,
+.rating__star input:checked::before {
+    content: "\ebcc";
+    color: #f4bd0e;
+}

@@ -1,0 +1,82 @@
+<?php
+namespace App\Http\Controllers\webhooks;
+
+use App\Models\IntegrationProduct;
+use App\Models\PurchasedCourse;
+use App\Models\Store;
+use App\Models\Student;
+use App\Models\User;
+use App\Models\Utility;
+use App\Models\StudentCourseAccess;
+use Carbon\Carbon;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+use App\Mail\NewUser;
+use Illuminate\Support\Facades\Mail;
+
+class Doppus {
+    public function statusEnum($value){
+		return $value === "APPROVED";
+	}
+
+    public function purchaseCourses($student_id, $courses, $order){
+        foreach ($courses as $course) {
+            PurchasedCourse::firstOrCreate(['student_id' => $student_id, 'course_id' => $course],['order_id' => $order, 'created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')]);
+            $unlock_date = Utility::unlockCourseByActualDate($student_id, $course);
+            if($unlock_date == null) $unlock_date = Carbon::now();
+            StudentCourseAccess::firstOrCreate(['student_id' => $student_id,'course_id' => $course,'unlocked_date' => $unlock_date,'is_unlocked' => 1]);
+        }
+    }
+
+    public function ProcessData($data, $integration) {
+        $h = fopen(base_path('logs/doppus.txt'), 'a+'); fwrite($h, json_encode($data)."\n"); fclose($h);
+
+        $status = $this->statusEnum($data->status);
+        $products = IntegrationProduct::where('integration_id', $integration->id)->first();
+
+        if($status == 'APPROVED') {
+            $this->getStatusApproved($data);
+        }
+
+        $info = [
+            'customer_name' => $data->customer->name,
+            'transaction_id' => $data->transaction_code
+        ];
+
+        return (Object) $info;
+    }
+
+    public function getStatusApproved($data): void{
+        $student = Student::where('email', $data->customer->email)->where('store_id', $integration->user_id)->first();
+
+            if($products->platform_product_id != $data->items[0]->code) die('ID do produto não confere');
+
+            if(!empty($student)){
+                if(!empty($products)){
+                    $this->purchaseCourses($student->id, $products->courses, $data->transaction_code);
+                }
+            }else{
+                $store = Store::where('id', $integration->user_id)->first();
+
+                $new_student = new Student();
+                $new_student->name = $data->customer->name;
+                $new_student->email = $data->customer->email;
+                $new_student->password = Hash::make($data->customer->doc);
+                $new_student->phone_number = $data->customer->phone;
+                $new_student->taxpayer = $data->customer->doc;
+                $new_student->store_id = $integration->user_id;
+                $new_student->status = 'on';
+                $new_student->save();
+
+                if(!empty($products)){
+                    $this->purchaseCourses($new_student->id, $products->courses, $data->transaction_code);
+                }
+
+                Mail::send(new NewUser($new_student, $store, $new_student->taxpayer));
+            }
+    }
+
+}
+

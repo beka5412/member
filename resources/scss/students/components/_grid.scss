@@ -1,0 +1,68 @@
+.block__grid__items{
+    @extend .card__wrapper;
+}
+
+.block__grid__item{
+    flex-basis: 17.95%;
+    position: relative;
+    @media screen and (max-width: 769px){
+        flex-basis: 45%;
+    }
+}
+
+.block__grid__image{
+    @extend .card__image;
+}
+
+.block__grid__image img{
+    transition: all .5s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+.block__grid__image:hover img{
+    transform: scale(1.04);
+}
+
+.block__grid__lg{
+    @extend .card--lg;
+}
+
+.block__grid__item .play__icon{
+    opacity: 0;
+    position: absolute;
+    transition: all .3s cubic-bezier(0.37, 0, 0.63, 1);
+    visibility: hidden;
+    z-index: 9;
+}
+
+.block__grid__item:hover .play__icon{
+    opacity: 1;
+    visibility: visible;
+}
+
+// rows
+.grid-items-5 .grid-item-courses{
+    width: 20%;
+}
+
+.grid-items-6 .grid-item-courses{
+    width: 16.66%;
+}
+
+.grid-items-7 .grid-item-courses{
+    width: 14.28%;
+}
+
+.grid-items-8 .grid-item-courses{
+    width: 12.5%;
+}
+
+.grid-item-courses:hover{
+    position: relative;
+    z-index: 99;
+}
+
+@media screen and (max-width: 768px){
+    .grid-items-5 .grid-item-courses, .grid-items-6 .grid-item-courses, .grid-items-7 .grid-item-courses, .grid-items-8 .grid-item-courses{
+        width: 50%;
+    }
+}

@@ -1,0 +1,80 @@
+.rm__head{
+    background: #0C1A2D;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.rm__header__back{
+    background: #031116;
+    border-radius: 100%;
+    box-sizing: border-box;
+    padding: 8px 9px;
+}
+
+.rm__header.is-dark{
+    background: #101924;
+}
+
+.rm__nav__item a{
+    border-bottom: solid 2px #0C1A2D;
+    box-sizing: border-box;
+    color: #526484;
+    cursor: pointer;
+    display: block;
+    padding: 1rem 1.5rem;
+}
+
+.rm__nav__item:first-child a{
+    padding: 1rem 3rem 1rem 1.5rem;
+}
+
+.rm__nav__item a.active{
+    border-bottom: solid 2px white;
+    color: white;
+    background: #0F2035;
+}
+
+.rm__nav__item a.active em{
+    color: white !important;
+}
+
+.rm__nav__item a:hover{
+    border-bottom: solid 2px white;
+    color: white;
+    background: #0F2035;
+}
+
+.rm__nav__item a em{
+    color: #526484 !important;
+}
+
+.rm__nav__item a:hover em{
+    color: white !important;
+}
+
+.rm__nav__item.active{
+    background: #0F2035;
+}
+
+.rm__nav__span{
+    @media screen and (max-width: 769px){
+        display: none;
+    }
+}
+
+.rm__progress{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+}
+
+.rm__progress .progress{
+    margin-left: 12px;
+    min-width: 120px;
+}

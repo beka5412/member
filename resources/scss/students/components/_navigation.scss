@@ -1,0 +1,36 @@
+.menu{
+    @extend .transition;
+    background: #101924;
+    height: 100vh;
+    transform: translateX(-100%);
+    width: 240px;
+    z-index: 999;
+    @media screen and (min-width: 290px){
+        width: 290px;
+    }
+}
+
+.menu__active{
+    transform: translateX(0);
+}
+
+.store__nav{
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+}
+
+.nk-wrap{
+    @extend .transition;
+}
+
+.nk-header-fixed{
+    @extend .transition;
+}
+
+.wrap__active__nav{
+    padding-left: 240px;
+    @media screen and (min-width: 290px){
+        padding-left: 290px;
+    }
+}

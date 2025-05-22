@@ -1,0 +1,43 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: member-api
+        restart: unless-stopped
+        working_dir: /var/www/
+        volumes:
+            - .:/var/www/
+        networks:
+            - member-api-network
+        depends_on:
+            - db
+
+    nginx:
+        image: nginx:alpine
+        restart: unless-stopped
+        ports:
+            - 80:80
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        networks:
+            - member-api-network
+
+    #service database
+    db:
+        image: mysql:8
+        container_name: member-db
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: laravel
+        volumes:
+            - ./.docker/mysql/dbdata:/var/lib/mysql
+        networks:
+            - member-api-network
+        ports:
+            - "3306:3306"
+
+networks:
+    member-api-network:
+        driver: bridge

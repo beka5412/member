@@ -1,0 +1,234 @@
+/*!
+ * Theme Name: Default
+ * Package : DashLite
+ * Author: Softnio
+ * Author URI: http://themeforest.net/user/softnio
+ * Version	 :	1.0.0
+ * Updated	 :	07.23.2020
+**/
+
+.chapter-topics {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.chapter-topics .checkbox-custom {
+flex: 1;
+padding-right: 10px;
+}
+
+.chapter-topics:not(:last-of-type) {
+margin-bottom: 10px;
+}
+
+.chapter-head {
+padding: 15px 0;
+margin-top: 80px;
+}
+
+.chapter-head .back-btn span svg path {
+fill: var(--black);
+}
+
+.chapter-head-content {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.chapter-head-content .chapter-title b {
+font-weight: bold;
+}
+
+
+.progress {
+height: 10px;
+overflow: hidden;
+background-color: #eeee;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+}
+
+.progress-bar {
+float: left;
+width: 0;
+height: 100%;
+font-size: 12px;
+line-height: 20px;
+color: #fff;
+text-align: center;
+background-color: var(--theme-color);
+-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+-webkit-transition: width .6s ease;
+-o-transition: width .6s ease;
+transition: width .6s ease;
+}
+
+.course-progress {
+max-width: 23%;
+width: 100%;
+}
+
+.chapter-head-content .chapter-head-block.pagination{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.chapter-head-content .chapter-head-block .download-btn .btn{
+padding: 10px 15px;
+margin-right: 15px;
+}
+
+.progress-labels {
+margin-bottom: 10px;
+}
+
+.chapter-head-content .chapter-head-block {
+padding: 0 15px;
+margin-bottom: 15px;
+}
+
+.chapter-head-content {
+margin: 0 -15px -15px;
+}
+
+.chapter-pagination ul {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+}
+
+.chapter-pagination ul li a {
+display: flex;
+align-items: center;
+}
+
+.chapter-pagination ul li:not(:last-of-type) {
+padding-right: 10px;
+border-right: 1px solid var(--border-color);
+margin-right: 10px;
+}
+
+.chapter-pagination ul li svg {
+width: 17px;
+height: 17px;
+}
+
+.chapter-pagination ul li .previous-course svg {
+margin-right: 15px;
+}
+
+.chapter-pagination ul li .next-course svg {
+transform: rotate(180deg);
+margin-left: 15px;
+}
+
+.header-style-one {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
+    color: var(--theme-color);
+    background: #141414;
+    box-shadow: 0px 4px 55px rgb(24 58 64 / 12%);
+}
+
+
+.header {
+  height: 600px;
+  padding: 25px 110px;
+  box-shadow: 0px -16px 43px 21px rgba(0, 0, 0, 0.6);
+  background-size: cover;
+}
+.header .details {
+  padding: 25px 0;
+  width: 60%;
+}
+.header .details .description {
+  padding: 25px 0 0 0;
+  font-size: 15px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 250px;
+}
+.header .details .button {
+  margin: 81px 20px 0 0;
+}
+
+.button {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 13px 35px;
+  border-radius: 7px;
+}
+.button.red {
+  background: rgb(141 82 220);
+}
+.button.red:hover {
+  background: rgb(141 82 220);
+  color: #fff
+}
+.button.red:active {
+  background: rgb(141 82 220);
+}
+.button.plain {
+  background: rgba(255, 255, 255, 0.15);
+}
+.button.plain:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.button.plain:active {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.over-banner {
+    height: 156px;
+    margin-top: -155px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 49.02%, rgba(0, 0, 0, 0.008) 52.42%, rgba(0, 0, 0, 0.035) 55.82%, rgba(0, 0, 0, 0.082) 59.22%, rgba(0, 0, 0, 0.15) 62.62%, rgba(0, 0, 0, 0.23) 66.02%, rgba(0, 0, 0, 0.333) 69.41%, rgba(0, 0, 0, 0.443) 72.81%, rgba(0, 0, 0, 0.557) 76.21%, rgba(0, 0, 0, 0.667) 79.61%, rgba(0, 0, 0, 0.77) 83.01%, rgba(0, 0, 0, 0.85) 86.41%, rgba(0, 0, 0, 0.918) 89.8%, rgba(0, 0, 0, 0.965) 93.2%, rgba(0, 0, 0, 0.992) 96.6%, rgb(0, 0, 0) 100%);
+    position: relative;
+    z-index: 9;
+}
+
+.banner-index {
+  width: 100%;
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-index {
+    width: 100%;
+    margin-top: 60px;
+  }
+}
+
+.nk-header-over {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0.48%, rgba(0, 0, 0, 0.47) 3.73%, rgba(0, 0, 0, 0.443) 6.67%, rgba(0, 0, 0, 0.424) 9.29%, rgba(0, 0, 0, 0.404) 11.98%, rgba(0, 0, 0, 0.384) 14.88%, rgba(0, 0, 0, 0.37) 18.18%, rgba(0, 0, 0, 0.34) 25%, rgba(0, 0, 0, 0.32) 32.4%, rgba(0, 0, 0, 0.28) 39.23%, rgba(0, 0, 0, 0.24) 47.42%, rgba(0, 0, 0, 0.2) 57.17%, rgba(0, 0, 0, 0.12) 68.67%, rgba(0, 0, 0, 0.06) 82.12%, rgba(0, 0, 0, 0) 97.71%);
+}
+
+.curse-title {
+  position: absolute;
+    bottom: -2px;
+    width: 100%;
+    padding: 24px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 49.02%, rgba(0, 0, 0, 0.008) 52.42%, rgba(0, 0, 0, 0.035) 55.82%, rgba(0, 0, 0, 0.082) 59.22%, rgba(0, 0, 0, 0.15) 62.62%, rgba(0, 0, 0, 0.23) 66.02%, rgba(0, 0, 0, 0.333) 69.41%, rgba(0, 0, 0, 0.443) 72.81%, rgba(0, 0, 0, 0.557) 76.21%, rgba(0, 0, 0, 0.667) 79.61%, rgba(0, 0, 0, 0.77) 83.01%, rgba(0, 0, 0, 0.85) 86.41%, rgba(0, 0, 0, 0.918) 89.8%, rgba(0, 0, 0, 0.965) 93.2%, rgba(0, 0, 0, 0.992) 96.6%, rgb(0, 0, 0) 100%);
+}
+
+
+/*# sourceMappingURL=styles.min.css.map */

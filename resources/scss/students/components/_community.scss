@@ -1,0 +1,47 @@
+.cmm{
+    #preview{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        max-width: 120px;
+        width: 100%;
+        img, video{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.preview__item{
+    position: relative;
+}
+
+.preview__close{
+    background: #ccc;
+    border-radius: 100px;
+    height: 1.5rem;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 1.5rem;
+    &::after, &::before{
+        background: #000;
+        content: "";
+        display: block;
+        left: 6px;
+        height: 1px;
+        position: absolute;
+        top: 11px;
+        width: 12px;
+    }
+    &::after{
+        transform: rotate(45deg);
+    }
+    &::before{
+        transform: rotate(-45deg);
+    }
+}
+
+.community__media video{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,116 @@
+.nk-player-slider{
+    position: relative;
+    top: -7.5rem;
+}
+
+.nk-slider-block:first-child .player__slider__title p{
+    color: $light-color;
+}
+
+.block__slider{
+    margin-bottom: 2rem;
+}
+
+.block__slider__card{
+    cursor: pointer;
+    flex-basis: 25%;
+}
+
+.block__slider__title p{
+    @extend .section__title;
+    margin-bottom: 0;
+}
+
+.block__slider__items{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.block__slider__image{
+    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    line-height: 0;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.block__card__image{
+    border-radius: 10px;
+    overflow: hidden;
+    width: auto !important;
+}
+
+.block__card__image img{
+    width: 100%;
+}
+
+.block__card__title{
+    color: $light-color;
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    margin-top: 12px;
+}
+
+.block__slider__image img, .block__card__image img{
+    transition: all .5s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+.block__slider__image:hover img, .block__card__image:hover img{
+    transform: scale(1.04);
+}
+
+.block__slider__image .play__icon{
+    opacity: 0;
+    position: absolute;
+    transition: all .3s cubic-bezier(0.37, 0, 0.63, 1);
+    visibility: hidden;
+    z-index: 9;
+}
+
+.block__slider__image:hover .play__icon{
+    opacity: 1;
+    visibility: visible;
+}
+
+.block__slider__card--lg{
+    flex-basis: 22%;
+}
+
+.slider__card--xl{
+    flex-basis: 28%;
+}
+
+.slider__card__info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider__card__info p{
+    font-weight: 500;
+}
+
+.swiper{
+    width: 100%;
+}
+
+.swiper-slide{
+    min-height: 40px;
+}
+
+.locked__card{
+    align-items: center;
+    background: rgba($color: #000000, $alpha: 0.4);
+    color: #fff;
+    display: flex;
+    font-size: 2em;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}

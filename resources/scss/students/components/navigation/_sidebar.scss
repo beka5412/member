@@ -1,0 +1,100 @@
+.nk-wrap{
+    transition: all .3s ease-in-out;
+}
+
+.rm__hamburger{
+    @media screen and (min-width: 900px){
+        display: none;
+    }
+}
+
+.rm__header{
+    margin-bottom: -4rem;
+    min-height: 64px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.rm__sidebar__hamburger{
+    display: none;
+    @media screen and (max-width: 900px){
+        display: block;
+        left: 120%;
+        position: absolute;
+        top: 2rem;
+        z-index: 1023;
+    }
+}
+
+.rm__sidebar{
+    background: #05101d;
+    border-color: #05101d;
+    bottom: 0;
+    display:block;
+    height: 100vh;
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-100%);
+    top: 0;
+    left: 0;
+    width: 110px;
+    z-index: 1022;
+    @media screen and (min-width: 900px){
+        transform: translateX(0);
+    }
+}
+
+.rm__sidebar.nk-sidebar-active{
+    transform: translateX(0);
+}
+
+.rm__sidebar + .nk-wrap{
+    @media screen and (min-width: 900px){
+        padding-left: 110px;
+    }
+}
+
+.nk-main:has(.nk-sidebar-active) .nk-wrap{
+    padding-left: 110px;
+}
+
+.rm__menu__item, .rm__header__brand{
+    box-sizing: border-box;
+    display: block;
+    padding: 1rem;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.rm__header__brand{
+    margin-bottom: 1rem;
+    position: relative;
+    top: 0.5rem;
+}
+
+.rm__menu__item a, .rm__menu__item span em{
+    color: #526484 !important;
+}
+
+.rm__menu__item:hover a, .rm__menu__item:hover span em{
+    color: #fff !important;
+}
+
+.rm__menu__item.active a, .rm__menu__item.active span em{
+    color: #fff !important;
+}
+
+.rm__menu__icon{
+    display: block;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.rm__menu__text{
+    display: inline-block;
+    font-size: 0.65rem;
+    line-height: 1.3em;
+}
